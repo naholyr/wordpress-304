@@ -36,7 +36,7 @@ class WPHeader304Manager
 	{
 		global $wpdb;
 		$this->lastModified = null;
-		if (empty($wp->query_vars['error']) && empty($wp->query_vars['feed'])) {
+		if (!is_user_logged_in() && empty($wp->query_vars['error']) && empty($wp->query_vars['feed'])) {
 			// Retrieve last post modified, not depending on type (includes standard posts, pages, but also any future type of post)
 			$wp_last_modified_date = $wpdb->get_var("SELECT GREATEST(post_modified_gmt, post_date_gmt) d FROM $wpdb->posts WHERE post_status = 'publish' ORDER BY d DESC LIMIT 1");
 			$wp_last_modified_date = max($wp_last_modified_date, get_lastcommentmodified('GMT'));
