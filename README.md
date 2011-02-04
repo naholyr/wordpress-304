@@ -1,5 +1,7 @@
-Copie de l'article dédié à ce plugin
-====================================
+Le code présenté ici est un plugin wordpress. À déposer dans un sous-dossier de "wp-content/plugins" pour l'installer. L'article ci-dessous décrit le fonctionnement général du statut 304, et aborde l'implémentation de ce plugin en particulier.
+
+"304 - Not Modified" est votre ami
+==================================
 
 Spéciale dédicace à Romain (aka Palleas), sans l'obstination de qui tout cela n'aurait pas été rendu possible :')
 
