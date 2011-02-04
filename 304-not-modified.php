@@ -2,7 +2,7 @@
 /*
 Plugin Name: 304 - Not modified
 Plugin Description: Let your blog return 304 Not Modified HTTP status, to optimize client-side caching
-Plugin URI: http://naholyr.fr/2011/02/plugin-wordpress-optimiser-le-cache-navigateur
+Plugin URI: http://naholyr.fr/2011/02/304-not-modified-est-votre-ami
 */
 
 class WPHeader304Manager
