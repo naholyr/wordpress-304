@@ -38,6 +38,7 @@ class WPHeader304Manager
 		if (empty($wp->query_vars['error']) && empty($wp->query_vars['feed'])) {
 			// Retrieve last post modified, not depending on type (includes standard posts, pages, but also any future type of post)
 			$wp_last_modified_date = $wpdb->get_var("SELECT GREATEST(post_modified_gmt, post_date_gmt) d FROM $wpdb->posts WHERE post_status = 'publish' ORDER BY d DESC LIMIT 1");
+			$wp_last_modified_date = max($wp_last_modified_date, get_lastcommentmodified('GMT'));
 			$wp_last_modified = mysql2date('D, d M Y H:i:s', $wp_last_modified_date, 0) . ' GMT';
 			$headers['Last-Modified'] = $wp_last_modified;
 			$headers['ETag'] = '"' . md5($wp_last_modified) . '"';
